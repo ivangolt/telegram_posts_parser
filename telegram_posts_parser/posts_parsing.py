@@ -7,8 +7,8 @@ from telegram_channels import telegram_channels_to_parse
 logging.basicConfig(level=logging.INFO)
 
 
-# OUTPUT_FILE = "../data/posts.csv"
-OUTPUT_FILE = "..\data\vacanciests.csv"
+OUTPUT_FILE = "../data/posts.csv"
+
 
 TOTAL_POSTS_TO_FETCH = 35
 
