@@ -1,0 +1,16 @@
+schema: '2.0'
+stages:
+  parse_posts:
+    cmd: python scripts/parse_posts.py data/posts.csv
+    outs:
+    - path: data/posts.csv
+      hash: md5
+      md5: e256ef86330d44b1d027f09495e46268
+      size: 1264268
+  push_to_storage:
+    cmd: python scripts/push_to_storage.py
+    deps:
+    - path: scripts/push_to_storage.py
+      hash: md5
+      md5: 65fc4222dd58d3cfc8b9a9ba358cbc5a
+      size: 1934

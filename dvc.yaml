@@ -1,0 +1,9 @@
+stages:
+  parse_posts:
+    cmd: python scripts/parse_posts.py data/posts.csv
+    outs:
+    - data/posts.csv
+  push_to_storage:
+    cmd: python scripts/push_to_storage.py
+    deps:
+    - scripts/push_to_storage.py 

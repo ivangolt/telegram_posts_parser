@@ -1,3 +1,4 @@
-# to develop
+# Telegram vacancies parser
 
-realize parallel parsing of channel by   concurrent.futures. ot multithreading
+1) Parse posts with vacancies from telegram channels.
+ 
