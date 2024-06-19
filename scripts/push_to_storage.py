@@ -7,27 +7,6 @@ from botocore.client import Config
 logging.basicConfig(level=logging.INFO)
 
 
-# ENDPOINT_URL = "https://s3.cloud.ru"
-# BUCKET_NAME = "bucket-be6cd7"
-# AWS_ACCESS_KEY_ID = (
-#     "7360e237-d11f-4989-add5-16dbb5ff0703:e877c694f46e64740b3fe6a50dcdb739"
-# )
-# AWS_SECRET_ACCESS_KEY = "1d9e5743c2dda58d039a45c1d3b9113f"
-
-# # File to upload
-# FILE_PATH = "../data/posts.csv"
-# OBJECT_NAME = "posts.csv"  # The name of the file in the bucket
-
-# # Initialize the S3 client
-# s3_client = boto3.client(
-#     "s3",
-#     endpoint_url=ENDPOINT_URL,
-#     aws_access_key_id=AWS_ACCESS_KEY_ID,
-#     aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
-#     config=Config(signature_version="s3v4"),
-# )
-
-
 # Upload the file
 @click.command()
 def push_to_storage():
