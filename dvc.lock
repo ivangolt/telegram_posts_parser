@@ -5,12 +5,19 @@ stages:
     outs:
     - path: data/posts.csv
       hash: md5
-      md5: e256ef86330d44b1d027f09495e46268
-      size: 1264268
+      md5: 564059b9a4964f5cd51300ab173b2977
+      size: 1273726
   push_to_storage:
     cmd: python scripts/push_to_storage.py
     deps:
     - path: scripts/push_to_storage.py
       hash: md5
-      md5: 65fc4222dd58d3cfc8b9a9ba358cbc5a
-      size: 1934
+      md5: 075eb12c008cb2d108be25c9b8a7dd8e
+      size: 1323
+  posts_preprocessing:
+    cmd: python scripts/posts_preprocessing.py data/posts.csv data/posts_prepared.csv
+    outs:
+    - path: data/posts_prepared.csv
+      hash: md5
+      md5: da577fa6782a150727eaa64ad1651833
+      size: 1199770

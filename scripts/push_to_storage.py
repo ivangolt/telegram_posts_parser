@@ -18,8 +18,8 @@ def push_to_storage():
     AWS_SECRET_ACCESS_KEY = "1d9e5743c2dda58d039a45c1d3b9113f"
 
     #    File to upload
-    FILE_PATH = "data/posts.csv"
-    OBJECT_NAME = "posts.csv"  # The name of the file in the bucket
+    FILE_PATH = "data/posts_prepared.csv"
+    OBJECT_NAME = "posts_prepared.csv"  # The name of the file in the bucket
 
     # Initialize the S3 client
     s3_client = boto3.client(

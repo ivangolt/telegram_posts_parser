@@ -3,6 +3,10 @@ stages:
     cmd: python scripts/parse_posts.py data/posts.csv
     outs:
     - data/posts.csv
+  posts_preprocessing:
+    cmd: python scripts/posts_preprocessing.py data/posts.csv data/posts_prepared.csv
+    outs:
+    - data/posts_prepared.csv
   push_to_storage:
     cmd: python scripts/push_to_storage.py
     deps:

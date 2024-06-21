@@ -1,5 +1,6 @@
 import boto3
 from botocore.client import Config
+from botocore.exceptions import ClientError, NoCredentialsError
 
 ENDPOINT_URL = "https://s3.cloud.ru"
 
@@ -15,13 +16,29 @@ s3_client = boto3.client(
     config=Config(signature_version="s3v4"),
 )
 
-# List the files in the bucket
-try:
-    response = s3_client.list_objects_v2(Bucket=BUCKET_NAME)
-    if "Contents" in response:
-        for obj in response["Contents"]:
-            print(obj["Key"])
-    else:
-        print(f"No files found in bucket {BUCKET_NAME}")
-except Exception as e:
-    print(f"Failed to list files in bucket {BUCKET_NAME}: {e}")
+# # List the files in the bucket
+# try:
+#     response = s3_client.list_objects_v2(Bucket=BUCKET_NAME)
+#     if "Contents" in response:
+#         for obj in response["Contents"]:
+#             print(obj["Key"])
+#     else:
+#         print(f"No files found in bucket {BUCKET_NAME}")
+# except Exception as e:
+#     print(f"Failed to list files in bucket {BUCKET_NAME}: {e}")
+
+
+# delete file from bucket
+def delete_file(bucket_name, object_name):
+    """Delete a file from the S3 bucket."""
+    try:
+        s3_client.delete_object(Bucket=bucket_name, Key=object_name)
+        print(f"Successfully deleted {object_name} from {bucket_name}")
+    except NoCredentialsError:
+        print("Credentials not available")
+    except ClientError as e:
+        print(f"Failed to delete {object_name} from {bucket_name}: {e}")
+
+
+# Delete the file
+delete_file(BUCKET_NAME, "posts.csv")
