@@ -12,7 +12,7 @@ logging.basicConfig(level=logging.INFO)
 OUTPUT_FILE = "../data/posts.csv"
 
 
-TOTAL_POSTS_TO_FETCH = 35
+TOTAL_POSTS_TO_FETCH = 150
 
 
 def parse_channel(channel_name: str, number_of_posts: int) -> list:
