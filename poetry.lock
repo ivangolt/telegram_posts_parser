@@ -2024,6 +2024,16 @@ files = [
 test = ["enum34", "ipaddress", "mock", "pywin32", "wmi"]
 
 [[package]]
+name = "public"
+version = "2020.12.3"
+description = "replace __all__ with @public.add decorator"
+optional = false
+python-versions = "*"
+files = [
+    {file = "public-2020.12.3.tar.gz", hash = "sha256:2919ef9037e2a2d2563f8431adaa09b6b129d5398d0a687e42f00593484a9aa2"},
+]
+
+[[package]]
 name = "pycparser"
 version = "2.22"
 description = "C parser in Python"
@@ -3137,4 +3147,4 @@ test = ["zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "c15cc9037e0991b4326369cc8e78831671a09b05586a9ce284df92cae4159431"
+content-hash = "e967bdd4a93215763a0116bb68fd922129926c240492306f1186c330925bdb23"

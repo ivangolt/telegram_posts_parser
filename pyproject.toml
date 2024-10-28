@@ -8,6 +8,7 @@ packages = [{include = "telegram_posts_parser"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+public = "^2020.12.3"
 
 
 [tool.poetry.group.prod.dependencies]
