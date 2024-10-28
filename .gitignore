@@ -4,3 +4,6 @@
 data/*.csv
 .backup
 /airflow_venv/
+*.pyc
+telegram_posts_parser/__pycache__/telegram_channels.cpython-311.pyc
+telegram_posts_parser/__pycache__/telegram_channels.cpython-311.pyc
