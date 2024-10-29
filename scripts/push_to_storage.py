@@ -4,7 +4,11 @@ import boto3
 import click
 from botocore.client import Config
 
+from airflow.hooks.base import BaseHook
+
 logging.basicConfig(level=logging.INFO)
+
+aws_conn = BaseHook.get_connection("aws_default")
 
 
 # Upload the file
@@ -25,8 +29,8 @@ def push_to_storage():
     s3_client = boto3.client(
         "s3",
         endpoint_url=ENDPOINT_URL,
-        aws_access_key_id=AWS_ACCESS_KEY_ID,
-        aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+        aws_access_key_id=aws_conn.login,
+        aws_secret_access_key=aws_conn.password,
         config=Config(signature_version="s3v4"),
     )
     logging.info("Initialize S3 client")

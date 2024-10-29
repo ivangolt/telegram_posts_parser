@@ -7,3 +7,5 @@ data/*.csv
 *.pyc
 telegram_posts_parser/__pycache__/telegram_channels.cpython-311.pyc
 telegram_posts_parser/__pycache__/telegram_channels.cpython-311.pyc
+*.log
+/__pycache__/

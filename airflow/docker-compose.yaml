@@ -58,9 +58,10 @@ x-airflow-common:
     AIRFLOW__API__AUTH_BACKEND: 'airflow.api.auth.backend.basic_auth'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
-    - ./dags:/opt/airflow/dags
-    - ./logs:/opt/airflow/logs
-    - ./plugins:/opt/airflow/plugins
+    - /mnt/c/dev/telegram_posts_parser/airflow/dags:/opt/airflow/dags
+    - /mnt/c/dev/telegram_posts_parser/airflow/logs:/opt/airflow/logs
+    - /mnt/c/dev/telegram_posts_parser/airflow/plugins:/opt/airflow/plugins
+    - /mnt/c/dev/telegram_posts_parser/data:/opt/airflow/data
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     &airflow-common-depends-on
